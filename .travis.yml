@@ -37,7 +37,8 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
 
 install:
-  - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - pip install lxml
+  - git clone --single-branch --branch master-oca-regex-log-odoo-jesuszapata https://github.com/vauxoo-dev/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
 
